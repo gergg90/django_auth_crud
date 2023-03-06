@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+
+<main class="container py-5">
+  <section class="card card-body bg-dark text-light">
+    <h1 class="display-1 text-center">Django App</h1>
+
+    <h2 class="mt-5">Django app auth + crud task</h2>
+
+    <p>
+      Register and create tasks with title, description and importance. To-do
+      list. update, complete and delete your tasks, keeping track of when you
+      gave them up completed.
+    </p>
+    <hr />
+
+    <h2>Technologies:</h2>
+
+    <p>
+      Django: manage.py, render, models, forms, decorators, django.auth, login,
+      logout, authenticate, path, protected routes
+    </p>
+    <p>Html jinja: for, if, extends, content</p>
+    <p>Style: Bootstrap5</p>
+
+    {% if user.is_authenticated %} {% else %}
+    <div class="text-center">
+      <a href="/signin" class="btn btn-danger">Login</a>
+
+      <a href="/signup" class="btn btn-primary">Register</a>
+    </div>
+    {% endif%}
+  </section>
+</main>
+
+{% endblock %}
